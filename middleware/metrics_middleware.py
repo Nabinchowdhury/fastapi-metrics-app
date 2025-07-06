@@ -1,4 +1,4 @@
-from metrics.http_metrics import request_total
+from metrics.http_metrics import HTTP_REQUESTS_TOTAL, HTTP_REQUEST_DURATION_SECONDS
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 import time
@@ -14,7 +14,9 @@ class MetricsMiddleware(BaseHTTPMiddleware):
         duration = time.perf_counter() - start_time
         status_code = response.status_code
 
-        request_total.labels(method=method, endpoint=path, status_code=status_code).inc()
+        HTTP_REQUESTS_TOTAL.labels(method=method, endpoint=path, status_code=status_code).inc()
+        HTTP_REQUEST_DURATION_SECONDS.labels(method=method, endpoint=path, status_code=status_code).observe(duration)
+
         # HTTP_REQUEST_DURATION_SECONDS.labels(method=method, endpoint=path).observe(duration)
 
         return response
