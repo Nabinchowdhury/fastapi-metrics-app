@@ -1,3 +1,4 @@
 fastapi
 prometheus_client
 uvicorn
+psutil
