@@ -38,9 +38,6 @@ To check metrics
     `time() - process_start_time_seconds`
     ![alt text](image-16.png)
 
-  - File descriptor usage
-  - Garbage collection statistics
-  - Thread count monitoring
 
 ### HTTP Application Metrics: 
 
