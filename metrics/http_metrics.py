@@ -9,5 +9,6 @@ HTTP_REQUESTS_TOTAL = Counter(
 HTTP_REQUEST_DURATION_SECONDS = Histogram(
     "http_request_duration_seconds", 
     "HTTP request durations",
-    ["method", "endpoint", "status_code"]
+    ["method", "endpoint", "status_code"],
+    buckets=[0.1, 0.3, 0.5, 1.0, 2.0, 5.0]
 )
