@@ -7,3 +7,7 @@ router = APIRouter()
 async def read_root():
     # request_total.labels(method="method", endpoint="path", status_code="status_code").inc()
     return {"Hello": 'explore'}
+
+@router.get("/data")
+async def getData():
+    return {"data": 'Here is some data'}
