@@ -19,7 +19,7 @@ fast_api_app.include_router(health.router)
 def metrics():
     collect_system_metrics()
     return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
-    return {"data": 'Here is some data'}
+    # return {"data": 'Here is some data'}
 
 
 

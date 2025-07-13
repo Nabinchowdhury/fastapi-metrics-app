@@ -1,2 +1,3 @@
+To run the project:
+    docker-compose up --build
 
-docker-compose up --build
